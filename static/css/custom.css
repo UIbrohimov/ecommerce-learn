@@ -1,0 +1,8 @@
+.carousel-item {
+    max-height: 92vh !important;
+}
+
+.carousel-item > img {
+    height: 92vh !important;
+    width: auto !important;
+}
