@@ -7,5 +7,6 @@ from utils.homeview import home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('news/', include('apps.news.urls', namespace="news")),
     path('', home_view, name="home")
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
