@@ -117,7 +117,7 @@
 	<!-- Container -->
 	<div class="container">
         <!-- Header -->
-			<header id="header" class="animate-onscroll">
+		<header id="header" class="animate-onscroll">
 				
 				<!-- Main Header -->
 				<div id="main-header">
@@ -245,7 +245,7 @@
 								<li><a href="team.html">Team</a></li>
 								<li><a href="issues.html">Issues</a></li>
 								<li><a href="testimonials.html">Testimonials</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="{% url 'contact:cont' %}">Contact</a></li>
 								<li><a href="page-right-sidebar.html">Page with right sidebar</a></li>
 								<li><a href="page-left-sidebar.html">Page with left sidebar</a></li>
 								<li><a href="page-fullwidth.html">Full width page</a></li>
@@ -408,13 +408,13 @@
 				<!-- /Lower Header -->
 				
 				
-			</header>
-			<!-- /Header -->
-	{% block content %}	
+		</header>
+		<!-- /Header -->
+		{% block content %}	
 
-	{% endblock %}
-	<!-- Footer -->
-	<footer id="footer">
+		{% endblock %}
+		<!-- Footer -->
+		<footer id="footer">
 
 		<!-- Main Footer -->
 		<div id="main-footer">
@@ -546,11 +546,11 @@
 		<!-- /Lower Footer -->
 
 
-	</footer>
-	<!-- /Footer -->
+		</footer>
+		<!-- /Footer -->
 
-	<!-- Back To Top -->
-	<a href="#" id="button-to-top"><i class="icons icon-up-dir"></i></a>
+		<!-- Back To Top -->
+		<a href="#" id="button-to-top"><i class="icons icon-up-dir"></i></a>
 
     </div>
 

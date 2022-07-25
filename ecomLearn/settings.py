@@ -49,6 +49,8 @@ LOCAL_APPS = [
     'apps.userinfo',
     'apps.company',
     'apps.news'
+
+
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS
