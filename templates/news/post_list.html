@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}		
+
+<section id="content">
+
+    <!-- Page Heading -->
+    <section class="section page-heading animate-onscroll">
+
+        <h1>Blog style 1 with right sidebar</h1>
+        <p class="breadcrumb"><a href="main-v1.html">Home</a> / Blog style 1 with right sidebar</p>
+
+    </section>
+    <!-- Page Heading -->
+
+
+
+    <!-- Section -->
+    <section class="section full-width-bg gray-bg">
+
+        <div class="row">
+
+            <div class="col-lg-9 col-md-9 col-sm-8">
+
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        {% for item in object_list %}
+                        <div class="blog-post animate-onscroll">
+                            {% if item.image %} 
+                            <div class="post-image">
+                                <img src="{{ item.image.url }}" alt="">
+
+                                <div class="media-hover">
+                                    <div class="media-icons">
+                                        <a href="{{ item.get_absolute_url }}" class="media-icon"><i
+                                                class="icons icon-link"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            {% endif %}
+                            <div class="post-content">
+
+                                <div class="post-side-meta">
+
+                                    <div class="date">
+                                        <span class="day">{{ item.published|date:"d" }}</span>
+                                        <span class="month">{{ item.published|date:"M" }}</span>
+                                    </div>
+
+                                    <a href="blog-single-sidebar.html">
+                                        <div class="post-format">
+                                            <i class="icons icon-doc-text-inv"></i>
+                                        </div>
+                                    </a>
+
+                                    <div class="post-comments">
+                                        {% comment %} <a href="blog-single-sidebar.html#comments"><i
+                                                class="icons icon-chat-empty"></i> 25</a> {% endcomment %}
+                                    </div>
+
+                                </div>
+
+                                <div class="post-header">
+                                    <h2><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></h2>
+                                    {% comment %} <div class="post-meta">
+                                        <span>by <a href="#">admin</a></span>
+                                        <span>in <a href="#">Politics</a>, <a href="#">Meetings</a></span>
+                                    </div> {% endcomment %}
+                                </div>
+
+                                <div class="post-exceprt">
+
+                                    <p>{{ item.discription|linebreaks }}</p>
+
+                                    <a href="{{ item.get_absolute_url }}"
+                                        class="button read-more-button big button-arrow">To'liq o'qish</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+                <div class="animate-onscroll">
+
+                    <div class="divider"></div>
+
+                    <div class="numeric-pagination">
+                        <a href="#" class="button"><i class="icons icon-left-dir"></i></a>
+                        <a href="#" class="button">1</a>
+                        <a href="#" class="button active-button">2</a>
+                        <a href="#" class="button">3</a>
+                        <a href="#" class="button"><i class="icons icon-right-dir"></i></a>
+                    </div>
+
+                </div>
+
+            </div>
+            {% include 'inc/sidebar.html' %}
+
+
+        </div>
+
+    </section>
+    <!-- /Section -->
+
+</section>
+
+
+{% endblock %}
