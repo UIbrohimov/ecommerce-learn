@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import ContactView
+from .models import Message
 
 
 class ContactForm(ModelForm):
     class Meta:
-        model = ContactView
+        model = Message
         fields = '__all__'

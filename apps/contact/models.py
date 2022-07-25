@@ -16,8 +16,8 @@ class Contact(models.Model):
 from django.db import models
 
 
-class ContactView(models.Model):
-    name = models.TextField()
+class Message(models.Model):
+    name = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     message = models.TextField()
 
