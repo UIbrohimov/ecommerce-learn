@@ -68,65 +68,25 @@
 				<p>Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. <br><br>
 Fields marked * are mandatory.</p><br>
 
-				<form id="contact-form" action="php/contact-form.php" method="POST">
-					
+				<form id="contact" action="." method="POST">
+					{% csrf_token %}
 					<div class="inline-inputs">
 
 						<div class="col-lg-6 col-md-6 col-sm-12">
 							<label>First name*</label>
-							<input type="text" name="contact-firstname"> 	
+							{{ form.name }} 	
 						</div>
 
 						<div class="col-lg-6 col-md-5 col-sm-7">
 							<label>Phone</label>
-							<input type="text" name="contact-phone"> 	
+							{{ form.phone }}	
 						</div>
 						
-						<!--<div class="col-lg-6 col-md-6 col-sm-12">
-
-							<label>Last name*</label>
-							<input type="text" name="contact-lastname"> 	
-						</div>
 						
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<label>Address</label>
-							<input type="text" name="contact-address">		
-						</div>
-						
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<label>City</label>
-							<input type="text" name="contact-city"> 		
-						</div>
-						
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<label>State</label>
-							<select name="contact-state" class="chosen-select">
-								<option value="United States">US</option>
-								<option value="Germany">Germany</option>
-								<option value="France">France</option>
-								<option value="Spain">Spain</option>
-							</select>		
-						</div>
-						
-						<div class="col-lg-2 col-md-2 col-sm-5">
-							<label>Zip code*</label>
-							<input type="text" name="contact-zip"> 		
-						</div>
-						
-						<div class="col-lg-6 col-md-6 col-sm-12">
-							<label>Email address*</label>
-							<input type="text" name="contact-email">								
-						</div>
-						
-						<div class="col-lg-5 col-md-5 col-sm-12">
-							<label>Subject</label>
-							<input type="text" name="contact-subject"> 
-						</div>
-						 -->
 						
 						 <div class="col-lg-12 col-md-12 col-sm-12">
 							<label>Your questions/comments</label>
-							<textarea rows="10" name="contact-message"></textarea>
+							{{ form.message}}
 						</div>
 						
 					</div>
