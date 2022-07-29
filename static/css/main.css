@@ -1,60 +1,8 @@
-/* Bu bizning proyektimizning css fayli
-* {
+/* Bu bizning proyektimizning css fayli */
+ *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body {
-    background-color: aliceblue;
-}
-.container {
-    width: 80%;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: bisque;
-}
-ul.header {
-    display: flex;
-    list-style: none;
-    background-color: aqua;
-    height: 80px;
-    align-items: center;
-    padding-left: 10px;
-}
-ul > li {
-    margin-right: 10px;
-}
-li a {
-    text-decoration: none;
-}
-.btn {
-    border: 1px solid rgb(189, 178, 178);
-    padding: 10px 5px;
-}
-.btn:hover {
-    background-color: azure;
-}
-.header .menu-item {
-    display: block;
-    width: 80px;
-} */
-
-#like:hover, #dislike:hover {
-    cursor: pointer;
-}
-
-.active-reaction {
-    color: rgb(56, 124, 68)
-}
-
-#warning {
-    text-align: center;
-    color: red;
-}
-
-#success {
-    text-align: center;
-    color: green;
 }
 
 /* Gallery styling */

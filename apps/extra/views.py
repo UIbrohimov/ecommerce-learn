@@ -1,21 +1,10 @@
-from django.shortcuts import render, HttpResponse
-from django.views.generic import View, ListView
+from django.shortcuts import render
+from django.views.generic import  ListView
 
+# Create your views here.
 from .models import Gallery, ImgCategory
 
-def my_view(request):
-    return HttpResponse("Result from function based view")
 
-
-class MyView(View):
-    salom = "Assalomu alaykum odamchalar"
-
-    def get(self, request):
-        return HttpResponse(self.salom)
-
-
-class SalomBolalar(MyView):
-    salom = "Assalomu alaykum bolalar"
 
 
 class GalleryView(ListView):

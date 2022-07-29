@@ -1,19 +1,16 @@
-from tabnanny import verbose
-from unicodedata import category
 from django.db import models
-
-# Create your models here.
 
 class Carusel(models.Model):
     title = models.CharField("Nomi", max_length=200)
     image = models.ImageField("Rasm", upload_to='carusel/')
 
     class Meta:
-        verbose_name = "Carusel"
-        verbose_name_plural = "Carusel"
-    
+        verbose_name = 'Carusel'
+        verbose_name_plural = 'Carusel'
+
     def __str__(self):
-        return self.title
+        return self.title    
+
 
 
 class ImgCategory(models.Model):
@@ -43,3 +40,4 @@ class Gallery(models.Model):
 
     def __str__(self) -> str:
         return f"{self.id} - rasm"
+
