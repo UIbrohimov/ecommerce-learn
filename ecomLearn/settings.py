@@ -49,7 +49,8 @@ LOCAL_APPS = [
     'apps.userinfo',
     'apps.company',
     'apps.news',
-    'apps.extra'
+    'apps.extra',
+    'apps.currency'
 
 
 ]
