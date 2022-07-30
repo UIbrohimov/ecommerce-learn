@@ -1,5 +1,5 @@
-from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
@@ -13,5 +13,6 @@ urlpatterns = [
     path('products/', include('apps.products.urls', namespace="products")),
     path('card/', include('apps.card.urls', namespace="card")),
     path('order/', include('apps.order.urls', namespace="order")),
+    path('more/', include('apps.extra.urls', namespace="extra")),
     path('', home_view, name="home")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
