@@ -32,6 +32,11 @@
 		<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 		<link href="{% static 'css/rtl.css' %}" rel="stylesheet" type="text/css">
 
+
+		<link rel="stylesheet" href="{% static 'css/main.css' %}">
+		<link rel="stylesheet" href="{% static 'icons/css/all.css' %}">
+		<link rel="stylesheet" href="{% static 'css/lightgallery.css' %}">
+
 		<!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<link href="css/jackbox-ie8.css" rel="stylesheet" type="text/css" />
@@ -274,55 +279,10 @@
 						<!-- Media -->
 						<li >
 						
-							<span>Media</span>
-							
-							<ul>
-							
-								<li>
-									<span>Sortable Grid</span>
-									<ul>
-										<li><a href="media-sortable-1column-sidebar.html">1 Column with right sidebar</a></li>
-										<li><a href="media-sortable-2columns.html">2 Columns</a></li>
-										<li><a href="media-sortable-3columns.html">3 Columns</a></li>
-										<li><a href="media-sortable-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-sortable-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Grid with pagination</span>
-									<ul>
-										<li><a href="media-grid-1column-sidebar.html">1 Column with right sidebar</a></li>
-										<li><a href="media-grid-2columns.html">2 Columns</a></li>
-										<li><a href="media-grid-3columns.html">3 Columns</a></li>
-										<li><a href="media-grid-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-grid-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Classic gallery</span>
-									<ul>
-										<li><a href="media-classic-sortable-3columns.html">Sortable 3 Columns</a></li>
-										<li><a href="media-classic-sortable-3columns-sidebar.html">Sortable 3 Columns with right sidebar</a></li>
-										<li><a href="media-classic-sortable-4columns.html">Sortable 4 Columns</a></li>
-										<li><a href="media-classic-3columns.html">3 Columns</a></li>
-										<li><a href="media-classic-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-classic-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Single portfolio post</span>
-									<ul>
-										<li><a href="portfolio-single-fullwidth.html">Fullwidth</a></li>
-										<li><a href="portfolio-single-sidebar.html">With Sidebar</a></li>
-										<li><a href="portfolio-single-extended.html">Extended Image Slideshow</a></li>
-									</ul>
-								</li>
-								
-							</ul>
-							
+							<span>
+								<a href="{% url 'extra:gallery' %}">Gallery</a>
+							</span>
+														
 						</li>
 						<!-- /Media -->
 						
@@ -612,6 +572,19 @@
     <script type="text/javascript" src="js/script_ie.js"></script>
 <![endif]-->
 
+
+  <script src="https://cdn.jsdelivr.net/picturefill/2.3.1/picturefill.min.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lightgallery.js/master/dist/js/lightgallery.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-pager.js/master/dist/lg-pager.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-autoplay.js/master/dist/lg-autoplay.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-fullscreen.js/master/dist/lg-fullscreen.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-zoom.js/master/dist/lg-zoom.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-hash.js/master/dist/lg-hash.js"></script>
+  <script src="https://cdn.rawgit.com/sachinchoolur/lg-share.js/master/dist/lg-share.js"></script>
+  <script src="{% static 'js/lg-rotate.js' %}"></script>
+  <script> 
+      lightGallery(document.getElementById('lightgallery'));
+  </script>
 
 </body>
 </html>
