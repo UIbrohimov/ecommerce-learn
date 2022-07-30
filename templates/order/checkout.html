@@ -1,0 +1,456 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section id="content">	
+			
+    <!-- Page Heading -->
+    <section class="section page-heading animate-onscroll">
+        
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9">
+            
+                <h1>Checkout</h1>
+                <p class="breadcrumb"><a href="main-v1.html">Home</a> / Checkout</p>
+                
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 align-right">
+            
+                                        <!-- Shopping Cart -->
+                <div class="shopping-cart">
+                
+                    <div class="cart-button">
+                        <i class="icons icon-basket"></i>
+                    </div>
+                    
+                    <div class="shopping-cart-dropdown">
+                    
+                        <div class="shopping-cart-content">
+                            <div class="cart-item">
+                                <div class="featured-image">
+                                    <img src="img/shop/item6.jpg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <h6><a href="#">Woo Ninja</a></h6>
+                                    <span class="price">1 x &pound;20</span>
+                                    <div class="remove-item">
+                                        <i class="icons remove-shopping-item icon-cancel-circled"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <div class="featured-image">
+                                    <img src="img/shop/item3.jpg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <h6><a href="#">Happy Ninja</a></h6>
+                                    <span class="price">1 x &pound;35</span>
+                                    <div class="remove-item">
+                                        <i class="icons remove-shopping-item icon-cancel-circled"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <div class="featured-image">
+                                    <img src="img/shop/item5.jpg" alt="">
+                                </div>
+                                <div class="item-content">
+                                    <h6><a href="#">Woo Album #2</a></h6>
+                                    <span class="price">1 x &pound;9</span>
+                                    <div class="remove-item">
+                                        <i class="icons remove-shopping-item icon-cancel-circled"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item">
+                                <h6>Cart subtotal: &pound;64</h6>
+                            </div>
+                            <div class="cart-item">
+                                <a href="#" class="button">View cart</a>
+                                <a href="#" class="button donate">Checkout</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <!-- /Shopping Cart -->						
+            </div>
+        </div>
+        
+    </section>
+    <!-- Page Heading -->
+    
+
+    
+    <!-- Section -->
+    <section class="section full-width-bg gray-bg">
+        
+        <div class="row">
+        
+            <div class="col-lg-9 col-md-9 col-sm-8">
+                
+                <!-- Checkout Login -->
+                <div class="alert-box info toggle-alert-box animate-onscroll">
+                    <p>Returning customer? <a href=".checkout-login-form" class="toggle-link">Click here to login</a></p>
+                </div>
+                
+                <form class="checkout-login-form animate-onscroll">
+                    
+                    <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new customer please proceed to the Billing &amp; Shipping section.</p>
+                    
+                    <div class="row inline-inputs">
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Username or email*</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Password*</label>
+                            <input type="text">
+                        </div>
+                        
+                    </div>
+                    
+                    <input type="submit" value="Login">
+                    <a href="#">Lost password?</a>
+                    
+                </form>
+                <!-- /Checkout Login -->
+                
+                
+                
+                <!-- Checkout Coupon -->
+                <div class="alert-box info toggle-alert-box animate-onscroll">
+                    <p>Have a coupon? <a href=".checkout-coupon-form" class="toggle-link">Click here to enter your code</a></p>
+                </div>
+                
+                <form class="checkout-coupon-form animate-onscroll">
+                    <div>
+                    
+                        <input type="text" placeholder="Coupon code">
+                        
+                        <input type="submit" value="Apply coupon">
+                    
+                    </div>
+                </form>
+                <!-- /Checkout Coupon -->
+                
+                
+                
+                <h3 class="animate-onscroll">Billing address</h3>
+                
+                <form id="checkout-form">
+                    
+                    <div class="animate-onscroll">
+                        <label>Country*</label>
+                        <select class="chosen-select">
+                            <option>United States</option>
+                            <option>France</option>
+                            <option>Germany</option>
+                            <option>United Kingdom</option>
+                        </select>
+                    </div>
+                    
+                    <div class="row inline-inputs animate-onscroll">
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>First Name*</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Last Name*</label>
+                            <input type="text">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="animate-onscroll">
+                        <label>Company Name</label>
+                        <input type="text">
+                        
+                        <label>Address*</label>
+                        <input type="text" placeholder="Street address">
+                        <input type="text" placeholder="Apartment, suite, unite etc. (optional)">
+                        
+                        <label>Town/City*</label>
+                        <input type="text" placeholder="Town/City">
+                    </div>
+                    
+                    <div class="row inline-inputs animate-onscroll">
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Country</label>
+                            <input type="text" placeholder="State/Country">
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Postcode*</label>
+                            <input type="text" placeholder="Postcode/Zip">
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Email Address*</label>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <label>Phone*</label>
+                            <input type="text">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="animate-onscroll">
+                        <input type="checkbox" id="create-an-account-chbx"><label for="create-an-account-chbx">Create an account?</label><br>
+                        <input type="checkbox" id="ship-to-billing-address-chbx"><label for="ship-to-billing-address-chbx">Ship to billing address</label><br>
+                    </div>
+                    
+                    <div class="animate-onscroll">
+                        <h3>Shipping address</h3>
+                        
+                        <label>Order notes</label>
+                        <textarea rows="7" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                    </div>
+                    
+                    <h3 class="animate-onscroll">Your Order</h3>
+                    
+                    <table class="your-order-table animate-onscroll">
+                    
+                        <tr>
+                            <th>Product</th>
+                            <th>Total</th>
+                        </tr>
+                        
+                        <tr>
+                            <td class="order-product">
+                                <div class="product-thumbnail">
+                                    <img src="img/shop/item6.jpg" alt="">
+                                </div>
+                                <p>Woo Ninja x 1</p>
+                            </td>
+                            <th class="price">&pound;20</th>
+                        </tr>
+                        
+                        <tr>
+                            <td class="order-product">
+                                <div class="product-thumbnail">
+                                    <img src="img/shop/item3.jpg" alt="">
+                                </div>
+                                <p>Happy Ninja x 1</p>
+                            </td>
+                            <th class="price">&pound;35</th>
+                        </tr>
+                        
+                        <tr>
+                            <td class="order-product">
+                                <div class="product-thumbnail">
+                                    <img src="img/shop/item5.jpg" alt="">
+                                </div>
+                                <p>Woo Album #2 x 1</p>
+                            </td>
+                            <th class="price">&pound;9</th>
+                        </tr>
+                        
+                        <tr>
+
+                            <th class="align-right">Cart Subtotal</th>
+                            <th class="price">&pound;64</th>
+                        </tr>
+                        
+                        <tr>
+                            <th class="align-right">Shipping</th>
+                            <td class="price">Free shipping</td>
+                        </tr>
+                        
+                        <tr>
+                            <th class="align-right">Order Total</th>
+                            <th class="price">&pound;64</th>
+                        </tr>
+                        
+                    </table>
+                    
+                    
+                    <div class="payment-options animate-onscroll">
+                        <ul>
+                            <li>
+                                <div class="payment-header">
+                                    <input type="radio" name="payment-option" checked="checked" id="direct-bank-transfer-radio">
+                                    <label for="direct-bank-transfer-radio">Direct Bank Transfer</label>
+                                </div>
+                                <div class="payment-content">
+                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="payment-header">
+                                    <input type="radio" name="payment-option" id="cheque-payment-radio">
+                                    <label for="cheque-payment-radio">Cheque Payment</label>
+                                </div>
+                                <div class="payment-content">
+                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="payment-header">
+                                    <input type="radio" name="payment-option" id="paypal-radio">
+                                    <label for="paypal-radio">PayPal <img src="img/shop/paypal.png" alt=""></label>
+                                </div>
+                                <div class="payment-content">
+                                    <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order wont be shipped until the funds have cleared in our account.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="button big donate animate-onscroll">Place Order</a>
+                    
+                </form>	
+                
+                
+                
+            </div>
+            
+            
+            
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
+                
+                
+                                        <!-- Top Rated Products -->
+                <div class="sidebar-box white animate-onscroll">
+                    
+                    <h3>Top rated products</h3>
+                    
+                    <ul class="shop-items-widget">
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item3.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Album #1</a></h6>
+                                <span class="price">£9</span>
+                                <div class="shop-rating read-only-small" data-score="5"></div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item6.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Ninja</a></h6>
+                                <span class="price">£20</span>
+                                <div class="shop-rating read-only-small" data-score="4.5"></div>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item7.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Logo</a></h6>
+                                <span class="price">£15</span>
+                                <div class="shop-rating read-only-small" data-score="5"></div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                <!-- /Top Rated Products -->						<!-- Categories -->
+                <div class="sidebar-box category-box white animate-onscroll">
+                    
+                    <h3>Product Categories</h3>
+                    <ul>
+                        <li><a href="#">Clothing</a></li>
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">Posters</a></li>
+                        <li><a href="#">T-shirts</a></li>
+                    </ul>
+                    
+                </div>
+                <!-- /Categories -->						<!-- Tags -->
+                <div class="sidebar-box white animate-onscroll">
+                    
+                    <h3>Tags</h3>
+                    <a href="#" class="tag">interviews</a>
+                    <a href="#" class="tag">design</a>
+                    <a href="#" class="tag">development</a>
+                    <a href="#" class="tag">marketing</a>
+                    <a href="#" class="tag">press</a>
+                    <a href="#" class="tag">projects</a>
+                    <a href="#" class="tag">resources</a>
+                    <a href="#" class="tag">tips</a>
+                    <a href="#" class="tag">tricks</a>
+                    <a href="#" class="tag">web</a>
+                    
+                </div>
+                <!-- /Tags -->						<!-- Instagram Photos -->
+                <div class="sidebar-box white flickr-photos animate-onscroll">
+                    <h3>Instagram Photos</h3>
+                    <ul id="instagram-feed">
+                    </ul>
+                </div>
+                <!-- /Instagram Photos -->						<!-- Top Rated Products -->
+                <div class="sidebar-box white animate-onscroll">
+                    
+                    <h3>Featured products</h3>
+                    
+                    <ul class="shop-items-widget">
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item4.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Album #1</a></h6>
+                                <span class="price">£9</span>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item6.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Ninja</a></h6>
+                                <span class="price">£20</span>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="featured-image">
+                                <img src="img/shop/item7.jpg" alt="">
+                            </div>
+                            <div class="shop-item-content">
+                                <h6><a href="shop-productpage.html">Woo Logo</a></h6>
+                                <span class="price">£15</span>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                </div>
+                <!-- /Top Rated Products -->						
+                
+            </div>
+            <!-- /Sidebar -->
+            
+            
+            
+        
+        </div>
+        
+    </section>
+    <!-- /Section -->
+
+</section>
+
+{% endblock %}
