@@ -48,9 +48,8 @@ LOCAL_APPS = [
     'apps.contact',
     'apps.userinfo',
     'apps.company',
-    'apps.news'
-
-
+    'apps.news',
+    'apps.currency'
 ]
 
 INSTALLED_APPS += THIRD_PARTY_APPS
