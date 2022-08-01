@@ -5,4 +5,4 @@ class NotFoundView(TemplateView):
     template_name: str = "404.html"
 
 
-home_view = NotFoundView.as_view()
+homeview = NotFoundView.as_view()
