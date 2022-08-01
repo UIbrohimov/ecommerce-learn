@@ -32,20 +32,6 @@
 		<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
 		<link href="{% static 'css/rtl.css' %}" rel="stylesheet" type="text/css">
 
-		<!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-			<link href="css/jackbox-ie8.css" rel="stylesheet" type="text/css" />
-			<link rel="stylesheet" href="css/ie.css">
-        <![endif]-->
-		
-		<!--[if gt IE 8]>
-			<link href="css/jackbox-ie9.css" rel="stylesheet" type="text/css" />
-		<![endif]-->
-		
-		<!--[if IE 7]>
-			<link rel="stylesheet" href="css/fontello-ie7.css">
-		<![endif]-->
-		
 		<style type="text/css">
 			.no-fouc {display:none;}
 	  	</style>
@@ -274,55 +260,10 @@
 						<!-- Media -->
 						<li >
 						
-							<span>Media</span>
-							
-							<ul>
-							
-								<li>
-									<span>Sortable Grid</span>
-									<ul>
-										<li><a href="media-sortable-1column-sidebar.html">1 Column with right sidebar</a></li>
-										<li><a href="media-sortable-2columns.html">2 Columns</a></li>
-										<li><a href="media-sortable-3columns.html">3 Columns</a></li>
-										<li><a href="media-sortable-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-sortable-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Grid with pagination</span>
-									<ul>
-										<li><a href="media-grid-1column-sidebar.html">1 Column with right sidebar</a></li>
-										<li><a href="media-grid-2columns.html">2 Columns</a></li>
-										<li><a href="media-grid-3columns.html">3 Columns</a></li>
-										<li><a href="media-grid-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-grid-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Classic gallery</span>
-									<ul>
-										<li><a href="media-classic-sortable-3columns.html">Sortable 3 Columns</a></li>
-										<li><a href="media-classic-sortable-3columns-sidebar.html">Sortable 3 Columns with right sidebar</a></li>
-										<li><a href="media-classic-sortable-4columns.html">Sortable 4 Columns</a></li>
-										<li><a href="media-classic-3columns.html">3 Columns</a></li>
-										<li><a href="media-classic-3columns-sidebar.html">3 Columns with left sidebar</a></li>
-										<li><a href="media-classic-4columns.html">4 Columns</a></li>
-									</ul>
-								</li>
-								
-								<li>
-									<span>Single portfolio post</span>
-									<ul>
-										<li><a href="portfolio-single-fullwidth.html">Fullwidth</a></li>
-										<li><a href="portfolio-single-sidebar.html">With Sidebar</a></li>
-										<li><a href="portfolio-single-extended.html">Extended Image Slideshow</a></li>
-									</ul>
-								</li>
-								
-							</ul>
-							
+							<span>
+								<a href="{% url 'extra:gallery' %}">Gallery</a>
+							</span>
+														
 						</li>
 						<!-- /Media -->
 						
