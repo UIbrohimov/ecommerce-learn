@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    {% block gallery-link %}	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="{% static 'gallery/main.css' %}"></script>
+    {% endblock %}
+   
+<section id="content">	
+
+     <!-- Page Heading -->
+     <section class="section page-heading animate-onscroll">
+        
+        <h1>gallery</h1>
+        <p class="breadcrumb"><a href="main-v1.html">Home</a> / Gallery</p>
+        
+    </section>
+    <!-- Page Heading -->
+
+	<section class="section full-width-bg gray-bg">
+        <div class="lightbox-gallery">
+            <div class="container">
+                <div class="row photos">
+                    
+                    <div style="width: 100%;" class="text-center my-2">
+                            <div class="card-header text-center d-flex">
+                                <h3>Kategoriyalar</h3>
+                                {% for item in categories %}
+                                <a class="button" href="?cat={{ item.id }}">{{ item.name }}</a>
+                                
+                                {% endfor %}
+                            </div>
+                        <br>
+                        {% for item in object_list %}
+                        <div class="col-sm-6 col-md-4 col-lg-3 item">
+                            <a href="{{ item.image.url }}" data-lightbox="photos">
+                            <img style="height: 180px;" class="img-fluid" src="{{ item.image.url }} " alt="{{ item.title }}"></a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>	        
+{% endblock %}
