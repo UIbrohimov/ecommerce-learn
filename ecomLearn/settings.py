@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'mptt'
+    'mptt',
+    'django_summernote'
 ]
 
 LOCAL_APPS = [

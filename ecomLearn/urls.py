@@ -15,6 +15,7 @@ urlpatterns = [
     path('card/', include('apps.card.urls', namespace="card")),
     path('order/', include('apps.order.urls', namespace="order")),
     path('more/', include('apps.extra.urls', namespace="extra")),
+    path('summernote/', include('django_summernote.urls')),
     path('', home_view, name="home"),
     path('404/', homeview, name="404")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
