@@ -142,11 +142,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = str(BASE_DIR / "staticfiles")
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    str(BASE_DIR / "static"),
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = str(BASE_DIR / 'media')
 
 
 # Default primary key field type
