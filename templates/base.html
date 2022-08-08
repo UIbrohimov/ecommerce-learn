@@ -2,176 +2,180 @@
 {% load static %}
 <html>
 
-	<head>
-		
-		<!-- Meta Tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- Title -->
-		<title>Candidate HTML Template</title>
-		
-		<!-- Google Fonts -->
-		{% comment %} <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
-		 {% endcomment %}
-		<!-- Favicon -->
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
-		
-		<!-- Stylesheets -->
-		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'css/fontello.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'js/revolution-slider/css/settings.css' %}" rel="stylesheet" type="text/css" media="screen" />
-		<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'css/responsive-calendar.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'css/chosen.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'jackbox/css/jackbox.min.css' %}" rel="stylesheet" type="text/css" />
-		<link href="{% static 'css/cloud-zoom.css' %}" rel="stylesheet" type="text/css" />
-		 
-		<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
-		<link href="{% static 'css/rtl.css' %}" rel="stylesheet" type="text/css">
+<head>
 
-		{% block gallery-link %}
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		{% endblock %}
+	<!-- Title -->
+	<title>Candidate HTML Template</title>
 
-		<style type="text/css">
-			.no-fouc {display:none;}
-	  	</style>
-	
-		<!-- jQuery -->
-		<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
-		<script src="{% static 'js/jquery-ui-1.10.4.min.js' %}"></script>
-		
-		<!-- Preloader -->
-		<script src="{% static 'js/jquery.queryloader2.min.js' %}"></script>
-		
-		<script type="text/javascript">
+	<!-- Google Fonts -->
+	{% comment %}
+	<link
+		href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800'
+		rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+	{% endcomment %}
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
+	<!-- Stylesheets -->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/fontello.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/flexslider.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'js/revolution-slider/css/settings.css' %}" rel="stylesheet" type="text/css" media="screen" />
+	<link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/responsive-calendar.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/chosen.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'jackbox/css/jackbox.min.css' %}" rel="stylesheet" type="text/css" />
+	<link href="{% static 'css/cloud-zoom.css' %}" rel="stylesheet" type="text/css" />
+
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'css/rtl.css' %}" rel="stylesheet" type="text/css">
+
+	{% block gallery-link %}
+
+	{% endblock %}
+
+	<style type="text/css">
+		.no-fouc {
+			display: none;
+		}
+	</style>
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery-1.11.0.min.js' %}"></script>
+	<script src="{% static 'js/jquery-ui-1.10.4.min.js' %}"></script>
+
+	<!-- Preloader -->
+	<script src="{% static 'js/jquery.queryloader2.min.js' %}"></script>
+
+	<script type="text/javascript">
 		$('html').addClass('no-fouc');
-		
-		$(document).ready(function(){
-			
+
+		$(document).ready(function () {
+
 			$('html').show();
-			
+
 			var window_w = $(window).width();
 			var window_h = $(window).height();
 			var window_s = $(window).scrollTop();
-			
+
 			$("body").queryLoader2({
 				backgroundColor: '#f2f4f9',
 				barColor: '#63b2f5',
 				barHeight: 4,
-				percentage:false,
-				deepSearch:true,
-				minimumTime:1000,
-				onComplete: function(){
-					
-					$('.animate-onscroll').filter(function(index){
-					
+				percentage: false,
+				deepSearch: true,
+				minimumTime: 1000,
+				onComplete: function () {
+
+					$('.animate-onscroll').filter(function (index) {
+
 						return this.offsetTop < (window_s + window_h);
-						
-					}).each(function(index, value){
-						
+
+					}).each(function (index, value) {
+
 						var el = $(this);
 						var el_y = $(this).offset().top;
-						
-						if((window_s) > el_y){
+
+						if ((window_s) > el_y) {
 							$(el).addClass('animated fadeInDown').removeClass('animate-onscroll');
-							setTimeout(function(){
-								$(el).css('opacity','1').removeClass('animated fadeInDown');
-							},2000);
+							setTimeout(function () {
+								$(el).css('opacity', '1').removeClass('animated fadeInDown');
+							}, 2000);
 						}
-						
+
 					});
-					
+
 				}
 			});
-			
+
 		});
-		</script>
-		
-	</head>
+	</script>
+
+</head>
 
 <body class="sticky-header-on tablet-sticky-header boxed-layout">
-	
+
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
+	<script>(function (d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Container -->
 	<div class="container">
-        <!-- Header -->
+		<!-- Header -->
 		<header id="header" class="animate-onscroll">
-				
-				<!-- Main Header -->
-				<div id="main-header">
-					
-					<div class="container">
-					
+
+			<!-- Main Header -->
+			<div id="main-header">
+
+				<div class="container">
+
 					<div class="row">
-						
-						
-						
+
+
+
 						<!-- Logo -->
-						<div id="logo" class="col-lg-3 col-md-3 col-sm-3">
-                          
+						<div id="logo" class="col-md-3 col-sm-3">
+
 							<a href="/"><img src="{% static 'img/logo.png' %}" alt="Logo"></a>
-							
+
 						</div>
 						<!-- /Logo -->
-						
-						
-						
+
+
+
 						<!-- Main Quote -->
 						<div class="col-lg-5 col-md-4 col-sm-4">
-							
-							<blockquote>Nam elit agna,enderit sit amet, tinciunt ac,<br>viverra sed, nulla..</blockquote>
-							
+
+							<blockquote>Nam elit agna,enderit sit amet, tinciunt ac,<br>viverra sed, nulla..
+							</blockquote>
+
 						</div>
 						<!-- /Main Quote -->
-						
-						
-						
+
+
+
 						<!-- Newsletter -->
 						<div class="col-lg-4 col-md-5 col-sm-5">
-							
+
 							<form id="newsletter" action="php/newsletter-form.php" method="POST">
-								
+
 								<h5><strong>Sign up</strong> for email updates</h5>
 								<div class="newsletter-form">
-								
+
 									<div class="newsletter-email">
 										<input type="text" name="newsletter-email" placeholder="Email address">
 									</div>
-									
+
 									<div class="newsletter-zip">
 										<input type="text" name="newsletter-zip" placeholder="Zip code">
 									</div>
-									
+
 									<div class="newsletter-submit">
 										<input type="submit" value="">
 										<i class="icons icon-right-thin"></i>
 									</div>
-									
+
 								</div>
-								
+
 							</form>
-							
+
 						</div>
 						<!-- /Newsletter -->
-						
-						
-						
+
+
+
 					</div>
-					
-					</div>
-					
+
 				</div>
 				<!-- /Main Header -->
 				
@@ -186,22 +190,22 @@
 					
 					<div id="menu-button">
 						<div>
-						<span></span>
-						<span></span>
-						<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
 						</div>
 						<span>Menu</span>
 					</div>
-					
+
 					<ul id="navigation">
-						
+
 						<!-- Home -->
 						<li class="home-button current-menu-item">
-						
+
 							<a href="/"><i class="icons icon-home"></i></a>
-{% comment %} 							
+							{% comment %}
 							<ul>
-							
+
 								<li>
 									<span>Layouts</span>
 									<ul>
@@ -210,7 +214,7 @@
 										<li><a href="main-v3.html">Home v3</a></li>
 									</ul>
 								</li>
-								
+
 								<li>
 									<span>Sliders</span>
 									<ul>
@@ -218,94 +222,96 @@
 										<li><a href="main-v2.html">Revolution</a></li>
 									</ul>
 								</li>
-								
+
 							</ul> {% endcomment %}
-							
+
 						</li>
 						<!-- /Home -->
-						
+
 						<!-- Pages -->
-						<li >
-						
+						<li>
+
 							<span>Pages</span>
-							
+
 							<ul>
-							
+
 								<li><a href="{% url 'company:about' %}">About</a></li>
-								<li><a href="team.html">Team</a></li>
-								<li><a href="issues.html">Issues</a></li>
-								<li><a href="testimonials.html">Testimonials</a></li>
 								<li><a href="{% url 'contact:cont' %}">Contact</a></li>
 								<li><a href="page-right-sidebar.html">Page with right sidebar</a></li>
 								<li><a href="page-left-sidebar.html">Page with left sidebar</a></li>
 								<li><a href="page-fullwidth.html">Full width page</a></li>
 								
+
+
+
 							</ul>
-							
+
 						</li>
 						<!-- /Pages -->
-						
+
 						<!-- Events -->
-						<li >
-						
+						<li>
+
 							<span>Events</span>
-							
+
 							<ul>
-							
+
 								<li><a href="event-calendar.html">Calendar</a></li>
 								<li><a href="event-post-v1.html">Event post style 1</a></li>
 								<li><a href="event-post-v2.html">Event post style 2</a></li>
+				
+								
+
 								
 							</ul>
-							
+
 						</li>
 						<!-- /Events -->
-						
+
 						<!-- Media -->
-						<li >
-						
+						<li>
+
 							<span>
 								<a href="{% url 'extra:gallery' %}">Gallery</a>
 							</span>
-														
+
 						</li>
 						<!-- /Media -->
-						
-						
-						
+
+
+
 						<!-- Get Involved -->
-						<li >
+						<li>
 							<a href="get-involved.html">Get Involved</a>
 						</li>
 						<!-- /Get Involved -->
-						
-						
-						
+
+
+
 						<!-- Features -->
-						<li >
-						
+						<li>
+
 							<span>Features</span>
-							
+
 							<ul>
 							
-								<li><a href="features-typography.html">Typography</a></li>
-								<li><a href="features-shortcodes.html">Shortcodes</a></li>
+								
 								
 							</ul>
-							
+
 						</li>
 						<!-- /Features -->
-						
-						
+
+
 						<!-- Blog -->
-						<li >
-						
+						<li>
+
 							<span>
 								<a href="{% url 'news:list' %}">Yangiliklar</a>
 							</span>
-							
+
 							{% comment %} <ul>
-							
+
 								<li><a href="blog-v1.html">Blog style 1 with right sidebar</a></li>
 								<li><a href="blog-v2.html">Blog style 2 with left sidebar</a></li>
 								<li><a href="blog-fullwidth.html">Full width blog</a></li>
@@ -315,248 +321,250 @@
 										<li><a href="blog-single-fullwidth.html">Full width</a></li>
 									</ul>
 								</li>
-								
+
 							</ul> {% endcomment %}
-							
+
 						</li>
 						<!-- /Blog -->
-						
-						
+
+
 						<!-- Shop -->
-						<li >
-						
+						<li>
+
 							<span>Shop</span>
-							
+
 							<ul>
 							
-								<li><a href="shop-frontpage.html">Front page</a></li>
-								<li><a href="{% url 'products:products' %}">Product page</a></li>
-								<li><a href="{% url 'card:cart' %}">Shopping cart</a></li>
-								<li><a href="{% url 'order:checkout' %}">Checkout</a></li>
 								
+								<li><a href="{% url 'products:products' %}">Product page</a></li>
+								<li><a href="{% url 'card:detail' %}">Shopping cart</a></li>
+								<li><a href="{% url 'order:checkout' %}">Checkout</a></li>
+
 							</ul>
-							
+
 						</li>
 						<!-- /Shop -->
-						
+
 						<!-- Donate -->
 						<li class="donate-button ">
 							<a href="#">Donate Today</a>
 						</li>
 						<!-- /Donate -->
-						
+
 					</ul>
+					
 					
 					</div>
 					
 				</div>
-				<!-- /Lower Header -->
-				
-				
+
+			</div>
+			<!-- /Lower Header -->
+
+
 		</header>
 		<!-- /Header -->
-		{% block content %}	
+		{% block content %}
 
 		{% endblock %}
 		<!-- Footer -->
 		<footer id="footer">
 
-		<!-- Main Footer -->
-		<div id="main-footer">
+			<!-- Main Footer -->
+			<div id="main-footer">
 
-			<div class="row">
+				<div class="row">
 
-				<div class="col-lg-3 col-md-3 col-sm-6 animate-onscroll">
+					<div class="col-md-3 col-sm-6 animate-onscroll">
 
-					<h4>Text Widget</h4>
+						<h4>Tashkilot haqida</h4>
 
-					<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu lacus.
-						Vestibulum libero nisl, porta vel.<br><br>
-						Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante
-						ipsum.</p>
+						<p>Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Integer rutrum ante eu
+							lacus.
+							Vestibulum libero nisl, porta vel.<br><br>
+							Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum
+							ante
+							ipsum.</p>
 
-				</div>
+					</div>
 
-				<div class="col-lg-3 col-md-3 col-sm-6 animate-onscroll">
+					<div class="col-lg-3 col-md-3 col-sm-6 animate-onscroll">
+							
+						<h4>Menu</h4>
+							
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-container">
+							
+							<ul class="menu">
+								<li><a href="#">About</a></li>
+								<li><a href="#">Issues</a></li>
+								<li><a href="#">Media</a></li>
+								<li><a href="#">Blog</a></li> 
+								<li><a href="#">Shop</a></li>
+								<li><a href="#">Contact us</a></li>
+							</ul>
+							
+						</div>
+					</div>
 
-					<h4>Campaign</h4>
-
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-container">
+					<div class="col-md-3 col-sm-6 twitter-widget">
+						<h4>Manzil</h4>
 
 						<ul class="menu">
-							<li><a href="#">About</a></li>
-							<li><a href="#">Issues</a></li>
-							<li><a href="#">Media</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Shop</a></li>
-							<li><a href="#">Contact us</a></li>
+							<li class="address">
+								<i class="fa fa-map-marker"></i>
+								Uzbekistan <br class="">
+								Tashkent, Chilonzor tumani<br class="">
+								Muqimiy kochasi<br>
+								56<br>
+								Moljal: Pifagor oquv markazi
+
+							</li>
+							<li class="phone">    
+								<i class="fa fa-mobile"></i>
+									<a href="tel: +998 99 123 45 67">67 45 123 99 998+</a>
+								<i class="fa fa-mobile"></i>
+								<a href="tel: +998 90 123 45 67">67 45 123 99 998+</a>
+								<i class="fa fa-mobile"></i>
+								<a href="tel: +998 71 123 45 67">67 45 123 17 998+</a>
+
+							</li>
+							<li class="email">
+								<i class="fa fa-envelope"></i>
+								<a target="_blank" href="mailto:pnk-uzb@mail.ru">pnk-uzb@mail.ru</a>
+
+							</li>
 						</ul>
-
 					</div>
 
-					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 menu-container">
-
-						<ul class="menu">
-							<li><a href="#">Email updates</a></li>
-							<li><a href="#">Find events</a></li>
-							<li><a href="#">Make calls</a></li>
-							<li><a href="#">Register to vote</a></li>
-							<li><a href="#">Donate</a></li>
-							<li><a href="#">Volunteer</a></li>
-						</ul>
-
+					<h4>Our Location</h4>
+					<div class="contact-map">
+						<iframe width="700" height="400" src="https://maps.google.rs/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=marmora+road&amp;sll=44.210767,20.922416&amp;sspn=4.606139,10.821533&amp;ie=UTF8&amp;hq=&amp;hnear=Marmora+Rd,+London+SE22+0RX,+United+Kingdom&amp;t=m&amp;z=14&amp;ll=51.451955,-0.055755&amp;output=embed"></iframe>
 					</div>
-
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-sm-6 twitter-widget-area animate-onscroll">
-
-					<h4>Latest Tweets</h4>
-
-					<div class="twitter-widget">
-
-					</div>
-
-					<a href="#" class="button twitter-button">Follow us on twitter</a>
-
-				</div>
-
-				<div class="col-lg-3 col-md-3 col-sm-6 animate-onscroll">
-
-					<h4>Like us on facebook</h4>
-
-					<iframe
-						src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FFacebookDevelopers&amp;width=270&amp;height=240&amp;colorscheme=dark&amp;header=false&amp;show_faces=true&amp;stream=false&amp;show_border=false"
-						style="border:none; overflow:hidden; width:100%; height:240px;"></iframe>
+					
 
 				</div>
 
 			</div>
 
-		</div>
-		<!-- /Main Footer -->
 
+			<!-- Lower Footer -->
+			<div id="lower-footer">
 
+				<div class="row">
 
+					<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll">
 
-		<!-- Lower Footer -->
-		<div id="lower-footer">
+						<p class="copyright">© 2014 Candidate. All Rights Reserved.</p>
 
-			<div class="row">
+					</div>
 
-				<div class="col-lg-4 col-md-4 col-sm-4 animate-onscroll">
+					<div class="col-lg-8 col-md-8 col-sm-8 animate-onscroll">
 
-					<p class="copyright">© 2014 Candidate. All Rights Reserved.</p>
+						<div class="social-media">
+							<ul class="social-icons">
+								<li class="facebook"><a href="#" class="tooltip-ontop" title="Facebook"><i
+											class="icons icon-facebook"></i></a></li>
+								<li class="twitter"><a href="#" class="tooltip-ontop" title="Twitter"><i
+											class="icons icon-twitter"></i></a></li>
+								<li class="google"><a href="#" class="tooltip-ontop" title="Google Plus"><i
+											class="icons icon-gplus"></i></a></li>
+								<li class="youtube"><a href="#" class="tooltip-ontop" title="Youtube"><i
+											class="icons icon-youtube-1"></i></a></li>
+								<li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i
+											class="icons icon-flickr-4"></i></a></li>
+								<li class="email"><a href="#" class="tooltip-ontop" title="Email"><i
+											class="icons icon-mail"></i></a></li>
+							</ul>
+							<ul class="social-buttons">
+								<li>
+									<iframe
+										src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35"
+										style="border:none; overflow:hidden; height:21px; padding-top:1px;  width:50px;"></iframe>
+								</li>
+								<li>
+									<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
+										data-type="button_count"></div>
+								</li>
+								<li>
+									<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+								</li>
+							</ul>
+						</div>
 
-				</div>
-
-				<div class="col-lg-8 col-md-8 col-sm-8 animate-onscroll">
-
-					<div class="social-media">
-						<ul class="social-icons">
-							<li class="facebook"><a href="#" class="tooltip-ontop" title="Facebook"><i
-										class="icons icon-facebook"></i></a></li>
-							<li class="twitter"><a href="#" class="tooltip-ontop" title="Twitter"><i
-										class="icons icon-twitter"></i></a></li>
-							<li class="google"><a href="#" class="tooltip-ontop" title="Google Plus"><i
-										class="icons icon-gplus"></i></a></li>
-							<li class="youtube"><a href="#" class="tooltip-ontop" title="Youtube"><i
-										class="icons icon-youtube-1"></i></a></li>
-							<li class="flickr"><a href="#" class="tooltip-ontop" title="Flickr"><i
-										class="icons icon-flickr-4"></i></a></li>
-							<li class="email"><a href="#" class="tooltip-ontop" title="Email"><i
-										class="icons icon-mail"></i></a></li>
-						</ul>
-						<ul class="social-buttons">
-							<li>
-								<iframe
-									src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35"
-									style="border:none; overflow:hidden; height:21px; padding-top:1px;  width:50px;"></iframe>
-							</li>
-							<li>
-								<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/"
-									data-type="button_count"></div>
-							</li>
-							<li>
-								<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-							</li>
-						</ul>
 					</div>
 
 				</div>
-
+				<!-- /Main Footer -->
 			</div>
-
-		</div>
-		<!-- /Lower Footer -->
-
-
 		</footer>
 		<!-- /Footer -->
 
 		<!-- Back To Top -->
 		<a href="#" id="button-to-top"><i class="icons icon-up-dir"></i></a>
 
-    </div>
-
-	
-
-<!-- /Container -->	
-	
-<!-- JavaScript -->
-
-<!-- Bootstrap --> 
-<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
-
-<!-- Modernizr -->
-<script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
-
-<!-- Sliders/Carousels -->
-<script type="text/javascript" src="{% static 'js/jquery.flexslider-min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
-
-<!-- Revolution Slider  -->
-<script type="text/javascript" src="{% static 'js/revolution-slider/js/jquery.themepunch.plugins.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/revolution-slider/js/jquery.themepunch.revolution.min.js' %}"></script>
-
-<!-- Calendar -->
-<script type="text/javascript" src="{% static 'js/responsive-calendar.min.js' %}"></script>
-
-<!-- Raty -->
-<script type="text/javascript" src="{% static 'js/jquery.raty.min.js' %}"></script>
-
-<!-- Chosen -->
-<script type="text/javascript" src="{% static 'js/chosen.jquery.min.js' %}"></script>
-
-<!-- jFlickrFeed -->
-<script type="text/javascript" src="{% static 'js/jflickrfeed.min.js' %}"></script>
-
-<!-- InstaFeed -->
-<script type="text/javascript" src="{% static 'js/instafeed.min.js' %}"></script>
-
-<!-- Twitter -->
-<script type="text/javascript" src="{% static 'php/twitter/jquery.tweet.js' %}"></script>
-
-<!-- MixItUp -->
-<script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
-
-<!-- JackBox -->
-<script type="text/javascript" src="{% static 'jackbox/js/jackbox-packed.min.js' %}"></script>
-
-<!-- CloudZoom -->
-<script type="text/javascript" src="{% static 'js/zoomsl-3.0.min.js' %}"></script>
-
- 
-
-<!-- Main Script -->
-<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+	</div>
 
 
-<!--[if lt IE 9]>
+
+	<!-- /Container -->
+
+	<!-- JavaScript -->
+
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	<!-- Modernizr -->
+	<script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
+
+	<!-- Sliders/Carousels -->
+	<script type="text/javascript" src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+	<!-- Revolution Slider  -->
+	<script type="text/javascript"
+		src="{% static 'js/revolution-slider/js/jquery.themepunch.plugins.min.js' %}"></script>
+	<script type="text/javascript"
+		src="{% static 'js/revolution-slider/js/jquery.themepunch.revolution.min.js' %}"></script>
+
+	<!-- Calendar -->
+	<script type="text/javascript" src="{% static 'js/responsive-calendar.min.js' %}"></script>
+
+	<!-- Raty -->
+	<script type="text/javascript" src="{% static 'js/jquery.raty.min.js' %}"></script>
+
+	<!-- Chosen -->
+	<script type="text/javascript" src="{% static 'js/chosen.jquery.min.js' %}"></script>
+
+	<!-- jFlickrFeed -->
+	<script type="text/javascript" src="{% static 'js/jflickrfeed.min.js' %}"></script>
+
+	<!-- InstaFeed -->
+	<script type="text/javascript" src="{% static 'js/instafeed.min.js' %}"></script>
+
+	<!-- Twitter -->
+	<script type="text/javascript" src="{% static 'php/twitter/jquery.tweet.js' %}"></script>
+
+	<!-- MixItUp -->
+	<script type="text/javascript" src="{% static 'js/jquery.mixitup.js' %}"></script>
+
+	<!-- JackBox -->
+	<script type="text/javascript" src="{% static 'jackbox/js/jackbox-packed.min.js' %}"></script>
+
+	<!-- CloudZoom -->
+	<script type="text/javascript" src="{% static 'js/zoomsl-3.0.min.js' %}"></script>
+
+
+
+	<!-- Main Script -->
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+
+
+	<!--[if lt IE 9]>
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
     <script type="text/javascript" src="js/script_ie.js"></script>
 <![endif]-->
 
 
 </body>
+
 </html>

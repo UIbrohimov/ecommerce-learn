@@ -23,10 +23,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7=vu*2fy%wer37(zx%m*532nfd4)s+pw4pmz@79*=j5s(lniwb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
+# local
+DEBUG = True
 ALLOWED_HOSTS = []
 
+# production 
+# DEBUG = False
+# ALLOWED_HOSTS = ["130.61.243.109", "hotel.ubuhobbit.uz", "www.hotel.ubuhobbit.uz"]
 
 # Application definition
 
@@ -86,6 +90,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecomLearn.wsgi.application'
 
+from django.conf import settings
+
+CART_SESSION_ID = "2"
+COMPARE_SESSION_ID = "1"
+WHISHLIST_SESSION_ID = "3"
+LAST_SEEN_SESSION_ID = "4"
+
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -136,12 +147,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = str(BASE_DIR / "staticfiles")
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    str(BASE_DIR / "static"),
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = str(BASE_DIR / 'media')
 
 
 # Default primary key field type

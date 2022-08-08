@@ -1,2 +1,4 @@
 django==3.2
 django_mptt==0.13.4
+Pillow
+django_summernote
