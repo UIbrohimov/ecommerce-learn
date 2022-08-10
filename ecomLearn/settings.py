@@ -90,14 +90,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecomLearn.wsgi.application'
 
-from django.conf import settings
-
-CART_SESSION_ID = "2"
-COMPARE_SESSION_ID = "1"
-WHISHLIST_SESSION_ID = "3"
-LAST_SEEN_SESSION_ID = "4"
-
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
