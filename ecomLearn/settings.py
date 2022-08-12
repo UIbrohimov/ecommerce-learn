@@ -44,7 +44,8 @@ INSTALLED_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'mptt'
+    'mptt',
+    'django_summernote'
 ]
 
 LOCAL_APPS = [
@@ -88,7 +89,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ecomLearn.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
