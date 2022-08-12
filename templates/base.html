@@ -184,7 +184,7 @@
 				
 				
 				<!-- Lower Header -->
-				<div id="lower-header">x`
+				<div id="lower-header">
 					
 					<div class="container">
 					
@@ -217,7 +217,10 @@
 
 								<li>
 									<span>Sliders</span>
-
+									<ul>
+										<li><a href="main-v1.html">Flexslider</a></li>
+										<li><a href="main-v2.html">Revolution</a></li>
+									</ul>
 								</li>
 
 							</ul> {% endcomment %}
@@ -234,6 +237,11 @@
 
 								<li><a href="{% url 'company:about' %}">About</a></li>
 								<li><a href="{% url 'contact:cont' %}">Contact</a></li>
+								<li><a href="page-right-sidebar.html">Page with right sidebar</a></li>
+								<li><a href="page-left-sidebar.html">Page with left sidebar</a></li>
+								<li><a href="page-fullwidth.html">Full width page</a></li>
+								
+
 
 
 							</ul>
@@ -247,9 +255,13 @@
 							<span>Events</span>
 
 							<ul>
-							
+
+								<li><a href="event-calendar.html">Calendar</a></li>
+								<li><a href="event-post-v1.html">Event post style 1</a></li>
+								<li><a href="event-post-v2.html">Event post style 2</a></li>
+				
 								
-								
+
 								
 							</ul>
 
@@ -325,7 +337,7 @@
 							
 								
 								<li><a href="{% url 'products:products' %}">Product page</a></li>
-								<li><a href="{% url 'card:cart' %}">Shopping cart</a></li>
+								<li><a href="{% url 'card:detail' %}">Shopping cart</a></li>
 								<li><a href="{% url 'order:checkout' %}">Checkout</a></li>
 
 							</ul>

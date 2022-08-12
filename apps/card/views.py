@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def cart_view(request):
+def cart_detail(request):
     return render(request, 'card/cart.html')
