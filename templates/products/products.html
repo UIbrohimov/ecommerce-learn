@@ -144,7 +144,7 @@
 
 								<div class="shop-rating read-only" data-score="3">{{ item.rate }}</div>
 
-								<a href="#" class="button add-to-cart-button transparent">Savatga qo'shish</a>
+								<a href="{% url 'card:add' id=id.item %}" class="button add-to-cart-button transparent">Savatga qo'shish</a>
 								<a href="#"
 									class="button details-button button-arrow transparent">To'liq ma'lumot</a>
 

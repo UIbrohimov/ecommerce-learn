@@ -25,12 +25,12 @@ SECRET_KEY = 'django-insecure-7=vu*2fy%wer37(zx%m*532nfd4)s+pw4pmz@79*=j5s(lniwb
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # local
-# DEBUG = True
+# DEBUG = False
 # ALLOWED_HOSTS = []
 
 # production 
-DEBUG = False
-ALLOWED_HOSTS = ["130.61.243.109", "hotel.ubuhobbit.uz", "www.hotel.ubuhobbit.uz"]
+DEBUG = True
+ALLOWED_HOSTS = ["127.0.0.1","130.61.243.109", "hotel.ubuhobbit.uz", "www.hotel.ubuhobbit.uz"]
 
 # Application definition
 
@@ -75,7 +75,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [str(BASE_DIR / "templates")],
-        'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',

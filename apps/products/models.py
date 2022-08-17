@@ -30,7 +30,7 @@ class Product(models.Model):
     verbose_name = 'product'
     verbose_name_plural = 'products'
 
-  def str(self):
+  def __str__(self):
     return self.title
 
     

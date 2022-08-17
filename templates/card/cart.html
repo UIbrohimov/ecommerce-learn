@@ -28,6 +28,7 @@
                     <div class="shopping-cart-dropdown">
                     
                         <div class="shopping-cart-content">
+                            {% for item in cart %}
                             <div class="cart-item">
                                 <div class="featured-image">
                                     <img src="img/shop/item6.jpg" alt="">
@@ -40,30 +41,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="cart-item">
-                                <div class="featured-image">
-                                    <img src="img/shop/item3.jpg" alt="">
-                                </div>
-                                <div class="item-content">
-                                    <h6><a href="#">Happy Ninja</a></h6>
-                                    <span class="price">1 x &pound;35</span>
-                                    <div class="remove-item">
-                                        <i class="icons remove-shopping-item icon-cancel-circled"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="cart-item">
-                                <div class="featured-image">
-                                    <img src="img/shop/item5.jpg" alt="">
-                                </div>
-                                <div class="item-content">
-                                    <h6><a href="#">Woo Album #2</a></h6>
-                                    <span class="price">1 x &pound;9</span>
-                                    <div class="remove-item">
-                                        <i class="icons remove-shopping-item icon-cancel-circled"></i>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
                             <div class="cart-item">
                                 <h6>Cart subtotal: &pound;64</h6>
                             </div>
@@ -102,44 +80,20 @@
                         <th></th>
                     </tr>
                     
+                    {% for item in cart %}
                     <tr>
                         <td class="shopping-cart-item">
                             <div class="product-thumbnail">
                                 <img src="img/shop/item6.jpg" alt="">
                             </div>
-                            <h6><a href="#">Woo Ninja</a></h6>
+                            <h6><a href="#">{{ item.name}}</a></h6>
                         </td>
-                        <td class="price">&pound;20</td>
+                        <td class="price">{{item.price}} UZS</td>
                         <td><input class="numeric-input" type="text" value="1">
                         <td class="price"><strong>&pound;20</strong></td>
                         <td><i class="icons remove-shopping-item icon-cancel-circled"></i></td>
                     </tr>
-                    
-                    <tr>
-                        <td class="shopping-cart-item">
-                            <div class="product-thumbnail">
-                                <img src="img/shop/item3.jpg" alt="">
-                            </div>
-                            <h6><a href="#">Happy Ninja</a></h6>
-                        </td>
-                        <td class="price">&pound;35</td>
-                        <td><input class="numeric-input" type="text" value="1">
-                        <td class="price"><strong>&pound;35</strong></td>
-                        <td><i class="icons remove-shopping-item icon-cancel-circled"></i></td>
-                    </tr>
-                    
-                    <tr>
-                        <td class="shopping-cart-item">
-                            <div class="product-thumbnail">
-                                <img src="img/shop/item5.jpg" alt="">
-                            </div>
-                            <h6><a href="#">Woo Album #2</a></h6>
-                        </td>
-                        <td class="price">&pound;9</td>
-                        <td><input class="numeric-input" type="text" value="1">
-                        <td class="price"><strong>&pound;9</strong></td>
-                        <td><i class="icons remove-shopping-item icon-cancel-circled"></i></td>
-                    </tr>
+                    {% endfor %}
                     
                     <tr>
                         <td class="apply-coupon">
