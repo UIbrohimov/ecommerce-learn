@@ -1,12 +1,12 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load mptt_tags %} {% block content %}
 
 <section id="content">
   <!-- Page Heading -->
   <section class="section page-heading animate-onscroll">
     <div class="row">
       <div class="col-lg-9 col-md-9 col-sm-9">
-        <h1>Product Page</h1>
-        <p class="breadcrumb"><a href="main-v1.html">Home</a> / Product Page</p>
+        <h1>Mahsulot tavsifi</h1>
+        <p class="breadcrumb"><a href="main-v1.html">Bosh sahifa</a> / Mahsulot tavsifi</p>
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3 align-right">
         <!-- Shopping Cart -->
@@ -75,11 +75,14 @@
   </section>
   <!-- Page Heading -->
 
+
   <!-- Section -->
   <section class="section full-width-bg gray-bg">
     <div class="row">
       <div class="col-lg-9 col-md-9 col-sm-8">
-        <div class="alert-box alert-box-button info animate-onscroll">
+        
+        
+        <!-- <div class="alert-box alert-box-button info animate-onscroll">
           <div class="row">
             <div class="col-lg-9 col-md-9 col-sm-8">
               <p>
@@ -88,12 +91,10 @@
               </p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 align-right">
-              <a href="shop-cart.html" class="button donate button-arrow"
-                >View Cart</a
-              >
+              <a href="shop-cart.html" class="button donate button-arrow">View Cart</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Product Single -->
         <div class="shop-single">
@@ -103,7 +104,7 @@
               <div class="shop-ribbon-sale"></div>
               <img
                 class="cloud-zoom-image"
-                src="img/shop/item1-big.jpg"
+                src="{{ object.image.url }}"
                 alt=""
               />
               <div class="fullscreen-icon">
@@ -125,8 +126,7 @@
                 <a
                   href="img/shop/item1-2-big.jpg"
                   class="jackbox"
-                  data-group="shop-product-gallery"
-                >
+                  data-group="shop-product-gallery">
                   <img src="img/shop/item1-2.jpg" alt="" />
                 </a>
               </li>
@@ -134,25 +134,20 @@
           </div>
           <!-- /Product Gallery -->
 
+
           <!-- Shop Product Content -->
           <div class="shop-product-content">
-            <h2 class="animate-onscroll">Woo Ninja</h2>
+            <h2 class="animate-onscroll">{{ object.title }}</h2>
             <div
               class="shop-rating read-only animate-onscroll"
               data-score="3.5"
             ></div>
-
-            <span class="price animate-onscroll"><del>£15</del> £12</span>
+              
+            <span class="price animate-onscroll">{{ object.price }}</span>
 
             <p class="animate-onscroll">
-              Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend,
-              elit. Aenean auctor wisi et urna. Aliquam erat volutpat.
+              {{ object.content }}
             </p>
-            <ul class="animate-onscroll">
-              <li>Aenean nec eros.</li>
-              <li>Estibulum ante ipsum primis.</li>
-              <li>In faucibus orci luctus.</li>
-            </ul>
 
             <div class="animate-onscroll">
               <input class="numeric-input" type="text" value="1" />
@@ -165,7 +160,7 @@
             >
 
             <p class="animate-onscroll">
-              Categories: <a href="#">Album</a>, <a href="#">Music</a>
+              Categories: {{ object.category }}
             </p>
 
             <ul class="social-share animate-onscroll">
@@ -201,6 +196,7 @@
         </div>
         <!-- /Product Single -->
 
+
         <!-- Tabs -->
         <div class="tabs style2 product-single-tabs animate-onscroll">
           <div class="tab-header">
@@ -217,17 +213,10 @@
           <div class="tab-content">
             <div id="tab1" class="tab">
               <p>
-                Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend,
-                elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac
-                turpis. Donec sit amet eros. Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit mauris fermentum dictum magna. Sed
-                laoreet aliquam leo. <br /><br />
-                Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend,
-                elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac
-                turpis. Integer rutrum ante eu lacus.Vestibulum libero nisl,
-                porta vel, scelerisque eget, malesuada at, neque.
+                {{ object.content }}
               </p>
             </div>
+
 
             <div id="tab2" class="tab">
               <!-- Reviews -->
@@ -247,38 +236,10 @@
                   </p>
                 </li>
 
-                <li>
-                  <img src="img/testimonials/profile2.jpg" alt="" />
-                  <div
-                    class="shop-rating read-only animate-onscroll"
-                    data-score="5"
-                  ></div>
-                  <h5>Alan Smith</h5>
-                  <span class="date">January 21, 2013</span>
-                  <p>
-                    Ut tellus dolor, dapibus eget, elementum vel, cursus
-                    eleifend, elit. Aenean auctor wisi et urna. Aliquam erat
-                    volutpat. Duis ac turpis. Integer rutrum ante eu
-                    lacus.Vestibulum libero nisl.
-                  </p>
-                </li>
-
-                <li>
-                  <img src="img/testimonials/profile3.jpg" alt="" />
-                  <div
-                    class="shop-rating read-only animate-onscroll"
-                    data-score="3"
-                  ></div>
-                  <h5>Camala Haddon</h5>
-                  <span class="date">April 11, 2013</span>
-                  <p>
-                    Ut tellus dolor, dapibus eget, elementum vel, cursus
-                    eleifend, elit. Aenean auctor wisi et urna. Aliquam erat
-                    volutpat.
-                  </p>
-                </li>
+                
               </ul>
               <!-- /Reviews -->
+
 
               <form class="submit-review">
                 <h4>Add a Review</h4>
@@ -348,189 +309,127 @@
             <!-- /Shop Item -->
           </div>
 
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <!-- Shop Item -->
-            <div class="shop-item animate-onscroll">
-              <div class="shop-image">
-                <a href="shop-productpage.html">
-                  <div class="shop-featured-image">
-                    <img src="img/shop/item8.jpg" alt="" />
-                  </div>
-                  <div class="shop-hover">
-                    <img src="img/shop/item8-2.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-
-              <div class="shop-content">
-                <h4><a href="shop-productpage.html">Woo Logo</a></h4>
-                <span class="price">£15</span>
-
-                <div class="shop-rating read-only" data-score="4"></div>
-
-                <a href="#" class="button add-to-cart-button transparent"
-                  >Add to cart</a
-                >
-                <a
-                  href="shop-productpage.html"
-                  class="button details-button button-arrow transparent"
-                  >Details</a
-                >
-              </div>
-            </div>
-            <!-- /Shop Item -->
-          </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-6">
-            <!-- Shop Item -->
-            <div class="shop-item animate-onscroll">
-              <div class="shop-image">
-                <a href="shop-productpage.html">
-                  <div class="shop-featured-image">
-                    <img src="img/shop/item9.jpg" alt="" />
-                  </div>
-                  <div class="shop-hover">
-                    <img src="img/shop/item9-2.jpg" alt="" />
-                  </div>
-                </a>
-              </div>
-
-              <div class="shop-content">
-                <h4><a href="shop-productpage.html">Woo Album #4</a></h4>
-                <span class="price">£9</span>
-
-                <div class="shop-rating read-only" data-score="4"></div>
-
-                <a href="#" class="button add-to-cart-button transparent"
-                  >Add to cart</a
-                >
-                <a
-                  href="shop-productpage.html"
-                  class="button details-button button-arrow transparent"
-                  >Details</a
-                >
-              </div>
-            </div>
-            <!-- /Shop Item -->
-          </div>
+          
         </div>
         <!-- /Related Products -->
       </div>
 
       <!-- Sidebar -->
-      <div class="col-lg-3 col-md-3 col-sm-4 sidebar">
-        <!-- Top Rated Products -->
-        <div class="sidebar-box white animate-onscroll">
-          <h3>Top rated products</h3>
+			<div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
-          <ul class="shop-items-widget">
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item3.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Album #1</a></h6>
-                <span class="price">£9</span>
-                <div class="shop-rating read-only-small" data-score="5"></div>
-              </div>
-            </li>
 
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item6.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Ninja</a></h6>
-                <span class="price">£20</span>
-                <div class="shop-rating read-only-small" data-score="4.5"></div>
-              </div>
-            </li>
+				<!-- Categories -->
+				<div class="sidebar-box category-box white animate-onscroll">
 
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item7.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Logo</a></h6>
-                <span class="price">£15</span>
-                <div class="shop-rating read-only-small" data-score="5"></div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- /Top Rated Products -->
-        <!-- Categories -->
-        <div class="sidebar-box category-box white animate-onscroll">
-          <h3>Product Categories</h3>
-          <ul>
-            <li><a href="#">Clothing</a></li>
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Posters</a></li>
-            <li><a href="#">T-shirts</a></li>
-          </ul>
-        </div>
-        <!-- /Categories -->
-        <!-- Tags -->
-        <div class="sidebar-box white animate-onscroll">
-          <h3>Tags</h3>
-          <a href="#" class="tag">interviews</a>
-          <a href="#" class="tag">design</a>
-          <a href="#" class="tag">development</a>
-          <a href="#" class="tag">marketing</a>
-          <a href="#" class="tag">press</a>
-          <a href="#" class="tag">projects</a>
-          <a href="#" class="tag">resources</a>
-          <a href="#" class="tag">tips</a>
-          <a href="#" class="tag">tricks</a>
-          <a href="#" class="tag">web</a>
-        </div>
-        <!-- /Tags -->
-        <!-- Instagram Photos -->
-        <div class="sidebar-box white flickr-photos animate-onscroll">
-          <h3>Instagram Photos</h3>
-          <ul id="instagram-feed"></ul>
-        </div>
-        <!-- /Instagram Photos -->
-        <!-- Top Rated Products -->
-        <div class="sidebar-box white animate-onscroll">
-          <h3>Featured products</h3>
+					<h3>Product Categories</h3>
 
-          <ul class="shop-items-widget">
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item4.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Album #1</a></h6>
-                <span class="price">£9</span>
-              </div>
-            </li>
+					<ul class="root">
+						{% recursetree category %}
+						<li><a href="#">{{ node.name }}</a>
+							{% if not node.is_leaf_node %}
+								<ul class="children">
+									{{ children }}
+								</ul>
+							{% endif %}
+						</li>
+						{% endrecursetree %}
+					</ul>
 
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item6.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Ninja</a></h6>
-                <span class="price">£20</span>
-              </div>
-            </li>
+					
 
-            <li>
-              <div class="featured-image">
-                <img src="img/shop/item7.jpg" alt="" />
-              </div>
-              <div class="shop-item-content">
-                <h6><a href="shop-productpage.html">Woo Logo</a></h6>
-                <span class="price">£15</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <!-- /Top Rated Products -->
-      </div>
-      <!-- /Sidebar -->
-    </div>
+				</div>
+				<!-- /Categories -->
+
+
+				<!-- Top Rated Products -->
+				<div class="sidebar-box white animate-onscroll">
+
+					<h3>Top rated products</h3>
+
+					<ul class="shop-items-widget">
+
+						{% for item in products %}
+						<li>
+							<div class="featured-image">
+								<img src="{{ item.image.url }}" alt="{{ item.title }}">
+							</div>
+							<div class="shop-item-content">
+								<h6><a href="#">{{ item.title }}</a></h6>
+								<span class="price">{{ item.price }}</span>
+								<div class="shop-rating read-only-small" data-score="5">{{ item.rate }}</div>
+							</div>
+						</li>
+						{% endfor %}
+
+						
+
+					</ul>
+
+				</div>
+				<!-- /Top Rated Products -->
+				
+
+
+				<!-- Tags -->
+				<div class="sidebar-box white animate-onscroll">
+
+					<h3>Tags</h3>
+					<a href="#" class="tag">interviews</a>
+					<a href="#" class="tag">design</a>
+					<a href="#" class="tag">development</a>
+					<a href="#" class="tag">marketing</a>
+					<a href="#" class="tag">press</a>
+					<a href="#" class="tag">projects</a>
+					<a href="#" class="tag">resources</a>
+					<a href="#" class="tag">tips</a>
+					<a href="#" class="tag">tricks</a>
+					<a href="#" class="tag">web</a>
+
+				</div>
+				<!-- /Tags -->
+
+
+				<!-- Instagram Photos -->
+				<div class="sidebar-box white flickr-photos animate-onscroll">
+					<h3>Instagram Photos</h3>
+					<ul id="instagram-feed">
+					</ul>
+				</div>
+				<!-- /Instagram Photos -->
+
+
+				<!-- Top Rated Products -->
+				<div class="sidebar-box white animate-onscroll">
+
+					<h3>Featured products</h3>
+
+					<ul class="shop-items-widget">
+
+						{% for item in products %}
+						<li>
+							<div class="featured-image">
+								<img src="{{ item.image.url }}" alt="{{ item.title }}">
+							</div>
+							<div class="shop-item-content">
+								<h6><a href="#">{{ item.title }}</a></h6>
+								<span class="price">{{ item.price }}</span>
+
+								<body class="sticky-header-on tablet-sticky-header">
+
+							</div>
+						</li>
+						{% endfor %}
+						
+
+					</ul>
+
+				</div>
+				<!-- /Top Rated Products -->
+
+			</div>
+			<!-- /Sidebar -->
+		</div>
+
   </section>
   <!-- /Section -->
 </section>

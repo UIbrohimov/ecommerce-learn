@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from apps.products.models import Product
 
+<<<<<<< HEAD
 def cart_view(request):
     # del request.session["card"]
     try:
@@ -19,3 +20,7 @@ def add(request, id):
                 })
             
     return redirect(request.META['HTTP_REFERER'])
+=======
+def cart_detail(request):
+    return render(request, 'card/cart.html')
+>>>>>>> 70c2bea05657ec4bd66b84774163caddf6230d37

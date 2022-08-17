@@ -118,7 +118,7 @@
 
 				<div class="row shop-items">
 					
-					{% for item in products %}
+					{% for item in object_list %}
 					<div class="col-lg-4 col-md-4 col-sm-6 " data-dateorder="1" data-popularorder="2"
 						data-avgratingorder="2" data-priceorder="2">
 
@@ -144,8 +144,13 @@
 
 								<div class="shop-rating read-only" data-score="3">{{ item.rate }}</div>
 
+<<<<<<< HEAD
 								<a href="{% url 'card:add' id=id.item %}" class="button add-to-cart-button transparent">Savatga qo'shish</a>
 								<a href="#"
+=======
+								<a href="#" class="button add-to-cart-button transparent">Savatga qo'shish</a>
+								<a href="{% url 'products:detail' item.pk %}"
+>>>>>>> 70c2bea05657ec4bd66b84774163caddf6230d37
 									class="button details-button button-arrow transparent">To'liq ma'lumot</a>
 
 							</div>
@@ -186,6 +191,29 @@
 			<div class="col-lg-3 col-md-3 col-sm-4 sidebar">
 
 
+				<!-- Categories -->
+				<div class="sidebar-box category-box white animate-onscroll">
+
+					<h3>Product Categories</h3>
+
+					<ul class="root">
+						{% recursetree category %}
+						<li><a href="#">{{ node.name }}</a>
+							{% if not node.is_leaf_node %}
+								<ul class="children">
+									{{ children }}
+								</ul>
+							{% endif %}
+						</li>
+						{% endrecursetree %}
+					</ul>
+
+					
+
+				</div>
+				<!-- /Categories -->
+
+
 				<!-- Top Rated Products -->
 				<div class="sidebar-box white animate-onscroll">
 
@@ -212,26 +240,7 @@
 
 				</div>
 				<!-- /Top Rated Products -->
-				<!-- Categories -->
-				<div class="sidebar-box category-box white animate-onscroll">
-
-					<h3>Product Categories</h3>
-					<ul class="root">
-						{% recursetree category %}
-						<li><a href="#{{ category.name }}" data-toggle="collapse" aria-expanded="false" aria-controls="{{ category.name }}">{{ node.name }}</a>
-							{% if not node.is_leaf_node %}
-								<ul class="children collapse" id="{{ category.name }}">
-									{{ children }}
-								</ul>
-							{% endif %}
-						</li>
-						{% endrecursetree %}
-					</ul>
-
-					
-					
-				</div>
-				<!-- /Categories -->
+				
 
 
 				<!-- Tags -->
@@ -297,10 +306,12 @@
 
 
 		</div>
-
+		
 	</section>
 	<!-- /Section -->
 
 </section>
+
+
 
 {% endblock content %}
